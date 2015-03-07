@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="fast_sha256.js"></script>
+    <script src="imghash.js"></script>
+<body>
+<input type="file" id="file">
+
+<script>
+    var file_input = document.getElementById('file');
+
+    function get_file_hash(callback) {
+        console.log(arguments);
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var h = image_hash(event.target.result);
+            debugger;
+            callback(h);
+        };
+
+        reader.readAsDataURL(file_input.files[0]);
+    }
+</script>
+
+</body>
+</html>
