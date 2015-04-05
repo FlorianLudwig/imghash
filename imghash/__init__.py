@@ -29,7 +29,11 @@ def get_hash(path):
     return h
 
 
-if __name__ == '__main__':
+def main():
     import sys
-    print get_hash(sys.argv[1]).hexdigest()
+    for path in sys.argv[1:]:
+        print get_hash(path).hexdigest(), path
+
+if __name__ == '__main__':
+    main()
 

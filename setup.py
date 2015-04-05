@@ -8,6 +8,11 @@ setup(
     author='Florian Ludwig',
     author_email='f.ludwig@greyrook.com',
     packages=['imghash'],
+    entry_points={
+        'console_scripts': [
+            'imghash = imghash:main',
+            ],
+    },
     install_requires=[
         'Pillow'
     ],
