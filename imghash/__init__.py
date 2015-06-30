@@ -14,6 +14,10 @@ def remove_transparent_pixels(img):
             new_data.append(item)
 
     img.putdata(new_data)
+    # work around memory leak in pillow 2.8.2
+    # see https://github.com/python-pillow/Pillow/issues/1318
+    while new_data:
+        new_data.pop()    
 
 
 def get_hash(path):
@@ -36,4 +40,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
