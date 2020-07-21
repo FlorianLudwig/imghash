@@ -1,3 +1,4 @@
+import sys
 import hashlib
 import struct
 
@@ -33,10 +34,11 @@ def get_hash(path):
     return h
 
 
-def main():
-    import sys
+def main() -> int:
     for path in sys.argv[1:]:
         print(get_hash(path).hexdigest(), path)
+    return 0
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    sys.exit(main())
