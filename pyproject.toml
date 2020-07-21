@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "imghash"
+version = "0.0.1"
+description = "Hash images based on pixel content"
+authors = ["Florian Ludwig <f.ludwig@greyrook.com>"]
+license = "Apache License 2.0"
+
+[tool.cpa]
+name = "imghash"
+public = "true"
+
+[tool.poetry.scripts]
+imghash = "imghash:main"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+Pillow = ">2,<8"
+
+[tool.poetry.dev-dependencies]
+cpa = "==0.4.1"
+mypy = "==0.782"
+black = "==19.10b0"
+pylint = "==2.5.3"
+pytest = "^5.4.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
