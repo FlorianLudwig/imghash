@@ -5,7 +5,8 @@ import struct
 from PIL import Image
 
 
-def remove_transparent_pixels(img):
+def remove_transparent_pixels(img) -> None:
+    """removes color information from 100% transparent pixels"""
     pixels = img.getdata()
     new_data = []
     for item in pixels:
@@ -17,9 +18,9 @@ def remove_transparent_pixels(img):
     img.putdata(new_data)
 
 
-def get_hash(path):
+def get_hash(path: str):
     img = Image.open(path)
-    img = img.convert('RGBA')
+    img = img.convert("RGBA")
     remove_transparent_pixels(img)
     data = img.tobytes()
 
