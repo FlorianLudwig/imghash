@@ -24,11 +24,11 @@ def get_hash(path: str):
     remove_transparent_pixels(img)
     data = img.tobytes()
 
-    h = hashlib.sha256()
-    size_prefix = struct.pack('!LL', *img.size)
-    h.update(size_prefix)
-    h.update(data)
-    return h
+    hash_obj = hashlib.sha256()
+    size_prefix = struct.pack("!LL", *img.size)
+    hash_obj.update(size_prefix)
+    hash_obj.update(data)
+    return hash_obj
 
 
 def main() -> int:
