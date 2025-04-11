@@ -14,7 +14,7 @@ imghash = "imghash:main"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-Pillow = ">2,<8"
+Pillow = ">2,<9"
 
 [tool.poetry.dev-dependencies]
 cpa = "==0.4.1"
