@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "imghash"
-version = "0.1.0"
+version = "0.2.0"
 description = "Hash images based on pixel content"
 authors = ["Florian Ludwig <f.ludwig@greyrook.com>"]
 license = "Apache License 2.0"
@@ -14,7 +14,7 @@ imghash = "imghash:main"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-Pillow = ">2,<8"
+Pillow = ">2,<9"
 
 [tool.poetry.dev-dependencies]
 cpa = "==0.4.1"
